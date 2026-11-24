@@ -1,4 +1,4 @@
-const { validateJobData } = require('../src/services/jobValidator');
+const { validateJobData } = require('../services/jobValidator');
 
 const today = new Date(2026, 11, 1); // December 1, 2026
 
