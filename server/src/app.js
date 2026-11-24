@@ -9,5 +9,7 @@ app.use(cors());
 app.use(express.json());
 
 app.use('/api/jobs', jobRoutes);
-
+app.get('/', (req, res) => {
+    res.send('QuickCrew API is running');
+});
 module.exports = app;
