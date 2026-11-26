@@ -10,7 +10,7 @@ describe('canClaimSpot function', () => {
 
     test('should not allow a worker to claim when the job is full', () => {
         const claims = [{ workerName: 'Maria'}, { workerName: 'James'}];
-        expect(canClaimSpot(job, claims, 'Maria')).toBe(' This job is full. ');
+        expect(canClaimSpot(job, claims, 'Jude')).toBe(' This job is full. ');
     });
 
     test('should allow a worker when there is one spot left', () => {
