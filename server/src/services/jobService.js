@@ -1,6 +1,5 @@
 // Business logic layer: creates and reads jobs.
 // Controllers call these functions instead of talking to the database directly.
-const Job = require('../models/Job');
 const { validateJobData } = require('./jobValidator');
 const { Job, Claim } = require('../models');
 
