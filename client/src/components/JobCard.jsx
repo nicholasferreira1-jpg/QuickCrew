@@ -6,7 +6,7 @@ function jobCard({ job, workerName, onClaimed}) {
     const [isError, setIsError] = useState(false);
     const [isClaiming, setIsClaiming] = useState(false);
 
-    const claims = jobs.claims || [];
+    const claims = job.claims || [];
     const spotsLeft = job.spotsNeeded - claims.length;
     const isFull = spotsLeft <= 0;
 
@@ -60,4 +60,4 @@ function jobCard({ job, workerName, onClaimed}) {
     )
  }
 
- export default JobCard;
+ export default jobCard;
