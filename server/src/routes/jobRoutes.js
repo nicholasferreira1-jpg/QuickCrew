@@ -2,7 +2,6 @@
 const express = require('express');
 const { postJob, listJobs } = require('../controllers/jobController');
 const { postClaim } = require('../controllers/claimController');
-const { postClaim } = require('../controllers/claimController');
 
 const router = express.Router();
 
