@@ -37,3 +37,5 @@ async function claimSpot(jobId, workerName) {
         return { claim, job };
     })
 }
+
+module.exports = { claimSpot };
