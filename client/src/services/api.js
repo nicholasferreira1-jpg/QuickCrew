@@ -29,3 +29,19 @@ export async function createJob(jobData) {
 
     return data;
 }
+
+export async function claimSpot(jobId, workerName) {
+    const response = await fetch(`${API_BASE_URL}/jobs/${jobId}/claim`, {
+        method: 'POST',
+        headers: {'Content-Type':'application/json'},
+        body: JSON.stringify({ workerName}),
+    })
+
+    const data = await response.json();
+
+    if(!response.ok) {
+        throw new Error(data.error || 'Could  not claim this spot.');
+    }
+
+    return data;
+}
