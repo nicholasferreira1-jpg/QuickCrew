@@ -13,6 +13,7 @@ const sequelize = process.env.DATABASE_URL
           dialect: 'sqlite',
           storage: process.env.DB_STORAGE || './database.sqlite',
           logging: false,
-      });
+          retry: { match: [/SQLITE_BUSY/], max: 5 }, // Wait and retry if another claim is saving
+      });  
 
 module.exports = sequelize;
