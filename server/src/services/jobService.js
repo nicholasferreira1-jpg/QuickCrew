@@ -2,6 +2,7 @@
 // Controllers call these functions instead of talking to the database directly.
 const Job = require('../models/Job');
 const { validateJobData } = require('./jobValidator');
+const { Job, Claim } = require('../models');
 
 async function createJob(data) {
     const errors = validateJobData(data);
@@ -17,7 +18,10 @@ async function createJob(data) {
 }
 
 async function getAllJobs() {
-    return Job.findAll({ order: [['date', 'ASC']] });
+    return Job.findAll({
+        include: [{ model: Claim, as: 'claims' }],
+        order: [['date', 'ASC']],
+    });
 }
 
 module.exports = { createJob, getAllJobs };
